@@ -59,3 +59,50 @@ const styles = StyleSheet.create(
 		},
 	}
 );
+
+
+snippet 3: Using Props:
+
+import React, {Component} from 'react';
+import {Image, Button, StyleSheet, Text, View} from 'react-native';
+
+export default class App extends React.Component {
+
+	constructor(props){
+		super(props);
+		this.state = {
+			helloTest: 'Hello React.',
+			number: 0
+		}
+	}
+
+	render(){
+		return (
+			<View style={{flex:1, alignItems: 'center', justifyContent: 'center'} }>
+			<Text style={styles.testStyle}>{this.state.helloTest}</Text>
+			{
+				this.state.number == 1 ?(
+						<Text> Number is ONE </Text>
+				) : (
+						<Text> Number is something other than ONE </Text>
+				)
+			}
+			<Image source={{url: 'http://via.placeholder.com/350x150'}} style={{width:350, height: 150}}/>
+			</View>
+			);
+	}
+}
+
+
+const styles = StyleSheet.create(
+	{
+			testStyle:{
+				color:'blue',
+				fontWeight: 'bold'
+			},
+			flex: 1,
+			backgroundColor: '#fff',
+			alignItems: 'center',
+			justifyContent: 'center',
+		}
+);
