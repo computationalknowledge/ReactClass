@@ -1,3 +1,5 @@
+snippet 1: 
+
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
@@ -16,6 +18,40 @@ export default class App extends React.Component {
 const styles = StyleSheet.create(
 	{
 		container: {
+			flex: 1,
+			backgroundColor: '#fff',
+			alignItems: 'center',
+			justifyContent: 'center',
+		},
+	}
+);
+
+
+snippet 2: presenting an Image:
+
+import React, {Component} from 'react';
+import {Image, Button, StyleSheet, Text, View} from 'react-native';
+
+export default class App extends React.Component {
+	render(){
+		return (
+			<View style={{flex:1, alignItems: 'center', justifyContent: 'center'} }>
+				 
+				<Text style={styles.testStyle}>  H  </Text>
+				<Image source={{url: 'http://via.placeholder.com/350x150'}} style={{width:350, height: 150}}/>
+			</View>
+			);
+	}
+}
+
+
+const styles = StyleSheet.create(
+	{
+		container: {
+			testStyle:{
+				color:'blue',
+				fontWeight: 'bold'
+			},
 			flex: 1,
 			backgroundColor: '#fff',
 			alignItems: 'center',
